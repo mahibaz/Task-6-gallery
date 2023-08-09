@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center pt-5 mt-5">
+      <button class="btn btn-outline-primary mx-2 buttons active" data-name="all">All</button>
+      <button class="btn btn-outline-primary mx-2 buttons" data-name="bag">Bag</button>
+      <button class="btn btn-outline-primary mx-2 buttons" data-name="shoe">Shoe</button>
+      <button class="btn btn-outline-primary mx-2 buttons" data-name="watch">Watch</button>
+      <button class="btn btn-outline-primary mx-2 buttons" data-name="camera">Camera</button>
+      <button class="btn btn-outline-primary mx-2 buttons" data-name="headphone">Head Phone</button>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col">
+        <div class="d-flex flex-wrap justify-content-center">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="bag" src="images/handBag.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="shoe" src="images/shoe.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="watch" src="images/watch.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="camera" src="images/camera.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="headphone" src="images/head phones.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="bag" src="images/handbag2.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="shoe" src="images/shoe2.jpg" alt="image" width="300px">
+          <img class="img-fluid img-thumbnail mx-2 my-3 image" data-name="Watch" src="images/watch2.jpg" alt="image" width="300px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup">
+    <div class="details">
+      <span class="title">Image Category: <p>Not defined</p></span>
+      <span class="icon">&times;</span>
+    </div>
+    <div class="popup-image">
+      <img src="" alt="">
+    </div>
+  </div>
+
+  <div class="shadow"></div>
+    
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
