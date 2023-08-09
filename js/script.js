@@ -1,44 +1,49 @@
 const filterButtons = document.querySelectorAll('.buttons');
-const filterImage = document.querySelectorAll('.image');
+const filterImages = document.querySelectorAll('.image');
+const popup = document.querySelector('.popup');
+const popupImage = popup.querySelector('img');
+const closeIcon = popup.querySelector('.icon');
+const shadow = document.querySelector('.shadow');
 
-const filterCards = e => {
-  document.querySelector('.active').classList.remove('active');
-  e.target.classList.add('active');
-  console.log(e.target)
+// Set default image category
+let currentCategory = 'all'; // You can change this to your desired default category
 
-  filterImage.forEach(image => {
-    image.classList.add('hide');
+// Filter images based on category
+const filterCards = category => {
+    filterImages.forEach(image => {
+        image.classList.add('hide');
 
-    if (image.dataset.name === e.target.dataset.name || e.target.dataset.name === 'all' ) {
-      image.classList.remove('hide');
-      
-    }
-  })
-}
+        if (image.dataset.name === category || category === 'all') {
+            image.classList.remove('hide');
+        }
+        
+    });
+};
 
-filterButtons.forEach( button => button.addEventListener('click',filterCards));
+// Add click event listener to filter buttons
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.active').classList.remove('active');
+        button.classList.add('active');
+        currentCategory = button.dataset.name;
+        filterCards(currentCategory);
+    });
+});
 
-filterImage.forEach(image =>{
-  image.onclick = () =>{
-    document.querySelector('.popup').style.display = 'block';
-    document.querySelector('.popup-image').src = image.getAttribute('src');
-}
-for (let index = 0; index < filterImage.length; index++) {
-  filterImage[index].setAttribute('onclick','preview(this)');
-  
-}
-  
-})
+// Initialize by filtering images with default category
+filterCards(currentCategory);
 
-const previewBox = document.querySelector('.popup');
-previewImg = previewBox.querySelector('img');
-closeIcon = previewBox.querySelector('.icon');
+// Add click event listeners to images
+filterImages.forEach(image => {
+    image.addEventListener('click', () => {
+        popupImage.src = image.getAttribute('src');
+        popup.classList.add('show');
+        shadow.style.display = 'block';
+    });
+});
 
-function preview(element){
-  let selectedPrevImg = element.getAttribute('src');
-  previewImg.src = selectedPrevImg;
-  previewBox.classList.add('show');
-  closeIcon.onclick = () => {
-    previewBox.classList.remove('show');
-  } 
-}
+// Close popup when close icon is clicked
+closeIcon.addEventListener('click', () => {
+    popup.classList.remove('show');
+    shadow.style.display = 'none';
+});
