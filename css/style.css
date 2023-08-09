@@ -25,11 +25,12 @@
   padding: 0 5px 5px 5px;
   z-index: 5;
 }
+
 .details{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 15px 13px 10px;
+  padding: 0px 15px 0px 10px;
 }
 
 .title{
@@ -48,13 +49,13 @@
   cursor: pointer;
 }
 
-
 .show{
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%,-50%) scale(1);
   
 }
+
 .shadow{
   position: fixed;
   top: 0;
@@ -64,8 +65,8 @@
   background: rgba(0, 0, 0, 0.8);
   display: none;
   z-index: 2;
-  
 }
+
 .popup-image img{
   width: 100%;
   border-radius: 0 0 3px 3px;
