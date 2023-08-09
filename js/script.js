@@ -30,8 +30,6 @@ for (let index = 0; index < filterImage.length; index++) {
   
 })
 
-
-
 const previewBox = document.querySelector('.popup');
 previewImg = previewBox.querySelector('img');
 closeIcon = previewBox.querySelector('.icon');
